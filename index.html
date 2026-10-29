@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hemakshi Ganware | Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07060f;--card:rgba(255,255,255,.04);--line:rgba(255,255,255,.1);--tx:#eef0ff;--mut:#9a9ec0;--a:#8b5cf6;--b:#22d3ee;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme="light"]{--bg:#f6f5ff;--card:rgba(255,255,255,.8);--line:rgba(60,40,140,.15);--tx:#14122b;--mut:#5d5a80;color-scheme:light}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f6f5ff;--card:rgba(255,255,255,.8);--line:rgba(60,40,140,.15);--tx:#14122b;--mut:#5d5a80;color-scheme:light}}
+html{scroll-behavior:smooth;scroll-padding-top:80px;height:100%}
+*{box-sizing:border-box;margin:0}
+body{background:var(--bg);color:var(--tx);font-family:'Space Grotesk',system-ui,sans-serif;line-height:1.6;overflow-x:hidden;min-height:100%}
+#cv{position:fixed;inset:0;z-index:-1;width:100%;height:100%}
+#bar{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:30}
+#glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,rgba(139,92,246,.22),transparent 65%);transform:translate(-50%,-50%);z-index:-1;left:-999px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:8px;padding:10px 16px;backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom:1px solid var(--line)}
+.lg{font-weight:700;font-size:18px;background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sp{flex:1}
+nav{display:none;gap:4px}
+nav a{color:var(--mut);text-decoration:none;padding:6px 12px;border-radius:99px;font-size:14px;transition:.2s}
+nav a:hover,nav a.on{color:var(--tx);background:var(--card)}
+.ib{border:1px solid var(--line);background:var(--card);color:var(--tx);border-radius:12px;width:40px;height:40px;cursor:pointer;font-size:16px}
+.btn{border:0;border-radius:14px;padding:12px 22px;font:700 15px 'Space Grotesk',system-ui,sans-serif;cursor:pointer;text-decoration:none;display:inline-block;transition:transform .2s,box-shadow .2s}
+.pri{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;box-shadow:0 8px 30px rgba(139,92,246,.35)}
+.pri:hover{transform:translateY(-3px)}
+.gh{background:var(--card);color:var(--tx);border:1px solid var(--line)}
+.gh:hover{transform:translateY(-3px)}
+#mn{position:fixed;inset:60px 0 0 0;z-index:19;background:var(--bg);display:none;flex-direction:column;padding:24px;gap:6px}
+#mn.open{display:flex}
+#mn a{font-size:26px;color:var(--tx);text-decoration:none;padding:10px 0;border-bottom:1px solid var(--line)}
+section{padding:70px 20px;max-width:960px;margin:auto}
+.rv{opacity:0;transform:translateY(34px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+.ey{color:var(--b);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+h1{font-size:clamp(38px,10vw,72px);line-height:1.05;margin:12px 0}
+h1 span,h2 span{background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(28px,7vw,42px);margin:8px 0 28px}
+p{color:var(--mut)}
+.typ{font-size:clamp(18px,4.5vw,24px);min-height:1.6em;color:var(--tx);margin-bottom:12px}
+.typ i{border-right:2px solid var(--b);margin-left:2px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{border-color:transparent}}
+.hero{display:grid;gap:34px;min-height:78vh;align-content:center}
+.ph{width:min(250px,70%);aspect-ratio:1;border-radius:30px;border:2px dashed var(--line);background:var(--card);display:grid;place-items:center;text-align:center;color:var(--mut);font-size:14px;animation:fl 5s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-12px) rotate(2deg)}}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;text-align:center}
+.st b{display:block;font-size:28px;color:var(--b)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.tabs button{border:1px solid var(--line);background:var(--card);color:var(--mut);padding:8px 16px;border-radius:99px;cursor:pointer;font:500 14px 'Space Grotesk',system-ui,sans-serif;transition:.2s}
+.tabs button.on{background:linear-gradient(135deg,var(--a),var(--b));color:#fff;border-color:transparent}
+.sg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.sk{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;transition:transform .2s,border-color .2s}
+.sk:hover{transform:translateY(-4px);border-color:var(--a)}
+.sk div{display:flex;justify-content:space-between;font-weight:500;margin-bottom:10px}
+.sk em{font-style:normal;color:var(--b);font-size:13px}
+.pb{height:6px;border-radius:9px;background:var(--line);overflow:hidden}
+.pb u{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--a),var(--b));transition:width 1.2s}
+.pj{display:grid;gap:18px}
+.fc{perspective:900px;height:300px;cursor:pointer}
+.fi{position:relative;height:100%;transition:transform .7s;transform-style:preserve-3d}
+.fc.fl .fi{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:24px;border:1px solid var(--line);background:var(--card);padding:26px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.fb{transform:rotateY(180deg);background:linear-gradient(135deg,rgba(139,92,246,.25),rgba(34,211,238,.18))}
+.fa h3,.fb h3{font-size:24px}
+.ic{font-size:40px}
+.tg{display:flex;gap:6px;flex-wrap:wrap}
+.tg span{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);color:var(--b)}
+.hint{font-size:12px;color:var(--mut)}
+.cg{display:grid;gap:14px}
+.bx{text-decoration:none;color:var(--tx);transition:.2s;border:2px dashed var(--line);border-radius:16px;padding:16px;color:var(--mut);display:flex;gap:12px;align-items:center;background:var(--card)}
+form{display:grid;gap:12px}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);color:var(--tx);border-radius:14px;padding:14px;font:inherit;outline:none}
+input:focus,textarea:focus{border-color:var(--a)}
+#ok{color:var(--b);min-height:1.4em}
+.bx:hover{border-color:var(--a);transform:translateY(-3px)}
+footer{text-align:center;padding:30px;color:var(--mut);font-size:13px;border-top:1px solid var(--line)}
+#top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));opacity:0;pointer-events:none;transition:.3s;z-index:20}
+#top.s{opacity:1;pointer-events:auto}
+@media(min-width:760px){nav{display:flex}.bg{display:none}.hero{grid-template-columns:1.5fr 1fr;align-items:center}.pj,.cg{grid-template-columns:1fr 1fr}.sg{grid-template-columns:repeat(3,1fr)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas><div id="glow"></div><div id="bar"></div>
+<header>
+  <span class="lg">&lt;Hemakshi /&gt;</span><div class="sp"></div>
+  <nav id="nv"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#contact">Contact</a></nav>
+  <button class="ib" id="th" aria-label="Theme">🌙</button>
+  <button class="ib bg" id="bg" aria-label="Menu">☰</button>
+</header>
+<div id="mn"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Projects</a><a href="#contact">Contact</a></div>
+
+<section id="home" class="hero">
+  <div>
+    <div class="ey">Portfolio 2026</div>
+    <h1>Hi, I’m <span>HEMAKSHI GANWARE</span></h1>
+    <div class="typ"><span id="ty"></span><i></i></div>
+    <p>4th-year student at CGIT Bilaspur who loves turning ideas into fast, clean and useful web apps.</p>
+    <div class="row"><a class="btn pri" href="#work">See my work</a><a class="btn gh" href="#contact">Let’s talk</a></div>
+  </div>
+  <div class="ph" style="font-size:26px;font-weight:700;line-height:1.2;color:var(--tx)">HEMAKSHI<br><span style="background:linear-gradient(90deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent">GANWARE</span></div>
+</section>
+
+<section id="about" class="rv">
+  <div class="ey">About me</div><h2>Student by day, <span>builder</span> always</h2>
+  <p>I’m in my 7th semester at CGIT Bilaspur. I work with C, C++, Python and the modern web stack, and I enjoy projects where code solves a real problem, like finding jobs or improving a resume.</p>
+  <div class="stats">
+    <div class="st"><b data-n="4">0</b>Year</div>
+    <div class="st"><b data-n="2">0</b>Projects</div>
+    <div class="st"><b data-n="11">0</b>Skills</div>
+  </div>
+</section>
+
+<section id="skills" class="rv">
+  <div class="ey">Tech stack</div><h2>Technologies I <span>work with</span></h2>
+  <div class="tabs" id="tb"></div>
+  <div class="sg" id="sg"></div>
+</section>
+
+<section id="work" class="rv">
+  <div class="ey">My work</div><h2>Featured <span>projects</span></h2>
+  <div class="pj">
+    <div class="fc"><div class="fi">
+      <div class="fa"><div class="ic">🔎</div><h3>Job Aggregator</h3><p>Collects job listings from many sources into one searchable place.</p><div class="tg"><span>Next.js</span><span>JavaScript</span><span>PostgreSQL</span></div><div class="hint">Tap to flip ↻</div></div>
+      <div class="fb"><h3>What it does</h3><p>Search, filter by role and location, and save jobs, so you don’t check ten sites every day.</p><a class="btn pri" href="#" onclick="event.stopPropagation()">View project</a></div>
+    </div></div>
+    <div class="fc"><div class="fi">
+      <div class="fa"><div class="ic">📄</div><h3>Resume Analyzer</h3><p>Checks a resume against a job description and suggests improvements.</p><div class="tg"><span>Python</span><span>ML</span><span>NLP</span></div><div class="hint">Tap to flip ↻</div></div>
+      <div class="fb"><h3>What it does</h3><p>Upload a resume, get a match score, missing keywords and tips to make it stronger.</p><a class="btn pri" href="#" onclick="event.stopPropagation()">View project</a></div>
+    </div></div>
+  </div>
+</section>
+
+<section id="contact" class="rv">
+  <div class="ey">Contact</div><h2>Let’s <span>talk</span></h2>
+  <div class="cg">
+    <div style="display:grid;gap:14px;align-content:start">
+      <a class="bx" href="https://www.instagram.com/hey_hemakshi_" target="_blank" rel="noopener">📷 @hey_hemakshi</a>
+      <a class="bx" href="mailto:hemakshigawre@gmail.com">✉️ hemakshigawre@gmail.com</a>
+    </div>
+    <form id="fm"><input id="nm" placeholder="Your name" required><input id="em" type="email" placeholder="Your email" required><textarea id="ms" rows="4" placeholder="Your message" required></textarea><button class="btn pri" type="submit">Send message</button><div id="ok"></div></form>
+  </div>
+</section>
+<footer>© 2026 Hemakshi Ganware</footer>
+<button class="ib" id="top" aria-label="Top">↑</button>
+
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},root=document.documentElement;
+try{var sv=localStorage.getItem("th");if(sv)root.dataset.theme=sv}catch(e){}
+function ic(){var l=root.dataset.theme?root.dataset.theme==="light":matchMedia("(prefers-color-scheme:light)").matches;$("th").textContent=l?"☀️":"🌙"}ic();
+$("th").onclick=function(){var l=root.dataset.theme?root.dataset.theme==="light":matchMedia("(prefers-color-scheme:light)").matches;root.dataset.theme=l?"dark":"light";try{localStorage.setItem("th",root.dataset.theme)}catch(e){}ic()};
+$("bg").onclick=function(){$("mn").classList.toggle("open")};
+$("mn").onclick=function(){$("mn").classList.remove("open")};
+// typing
+var w=["Web Developer","Next.js Enthusiast","Python Programmer","Problem Solver"],wi=0,ci=0,del=false;
+(function t(){var s=w[wi];$("ty").textContent=s.slice(0,ci);if(!del&&ci===s.length){del=true;return setTimeout(t,1300)}if(del&&ci===0){del=false;wi=(wi+1)%w.length}ci+=del?-1:1;setTimeout(t,del?40:80)})();
+// skills
+var sk={"Languages":[["C",75],["C++",78],["Python",85],["JavaScript",82]],"Web":[["HTML & CSS",90],["React",75],["Next.js",70],["Tailwind CSS",80]],"Data":[["Machine Learning",60],["PostgreSQL",68],["SQLite",72]],"Tools":[["Git",78]]};
+var cats=["All"].concat(Object.keys(sk));
+$("tb").innerHTML=cats.map(function(c,i){return '<button data-c="'+c+'" class="'+(i?'':'on')+'">'+c+'</button>'}).join("");
+function show(c){var a=[];Object.keys(sk).forEach(function(k){if(c==="All"||c===k)a=a.concat(sk[k])});
+$("sg").innerHTML=a.map(function(s){return '<div class="sk"><div>'+s[0].replace("&","&amp;")+'<em>'+s[1]+'%</em></div><div class="pb"><u data-w="'+s[1]+'"></u></div></div>'}).join("");
+setTimeout(function(){document.querySelectorAll(".pb u").forEach(function(u){u.style.width=u.dataset.w+"%"})},60)}
+$("tb").onclick=function(e){var b=e.target.closest("button");if(!b)return;document.querySelectorAll(".tabs button").forEach(function(x){x.classList.remove("on")});b.classList.add("on");show(b.dataset.c)};
+show("All");
+// flip
+document.querySelectorAll(".fc").forEach(function(f){f.onclick=function(){f.classList.toggle("fl")}});
+// reveal + counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");e.target.querySelectorAll("[data-n]").forEach(function(n){var m=+n.dataset.n,c=0,id=setInterval(function(){c++;n.textContent=c;if(c>=m)clearInterval(id)},90)});io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll(".rv").forEach(function(r){io.observe(r)});
+// scroll
+addEventListener("scroll",function(){var h=root.scrollHeight-innerHeight;$("bar").style.width=(h>0?scrollY/h*100:0)+"%";$("top").classList.toggle("s",scrollY>500);
+var cur="home";document.querySelectorAll("section").forEach(function(s){if(s.getBoundingClientRect().top<150)cur=s.id});
+document.querySelectorAll("nav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+cur)})},{passive:true});
+$("top").onclick=function(){scrollTo({top:0,behavior:"smooth"})};
+// form (demo only)
+$("fm").onsubmit=function(e){e.preventDefault();location.href="mailto:hemakshigawre@gmail.com?subject="+encodeURIComponent("Message from "+$("nm").value)+"&body="+encodeURIComponent($("ms").value+"\n\nFrom: "+$("em").value);$("ok").textContent="Opening your email app...";};
+// particles
+var cv=$("cv"),x=cv.getContext("2d"),P=[],m={x:-999,y:-999},W,H;
+function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight;P=[];var n=Math.min(70,Math.floor(W*H/16000));for(var i=0;i<n;i++)P.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5})}
+rs();addEventListener("resize",rs);
+function mv(e){var p=e.touches?e.touches[0]:e;m.x=p.clientX;m.y=p.clientY;$("glow").style.left=m.x+"px";$("glow").style.top=m.y+"px"}
+addEventListener("mousemove",mv);addEventListener("touchmove",mv,{passive:true});
+function dr(){x.clearRect(0,0,W,H);var l=root.dataset.theme?root.dataset.theme==="light":matchMedia("(prefers-color-scheme:light)").matches,c=l?"90,60,200":"139,180,255";
+P.forEach(function(p,i){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+var dx=p.x-m.x,dy=p.y-m.y,d=Math.hypot(dx,dy);if(d<120){p.x+=dx/d*1.5;p.y+=dy/d*1.5}
+x.fillStyle="rgba("+c+",.8)";x.beginPath();x.arc(p.x,p.y,2,0,6.3);x.fill();
+for(var j=i+1;j<P.length;j++){var q=P[j],e=Math.hypot(p.x-q.x,p.y-q.y);if(e<120){x.strokeStyle="rgba("+c+","+(1-e/120)*.35+")";x.beginPath();x.moveTo(p.x,p.y);x.lineTo(q.x,q.y);x.stroke()}}
+if(d<160){x.strokeStyle="rgba(34,211,238,"+(1-d/160)*.6+")";x.beginPath();x.moveTo(p.x,p.y);x.lineTo(m.x,m.y);x.stroke()}});
+requestAnimationFrame(dr)}
+dr();
+})();
+</script>
+</body>
+</html>
